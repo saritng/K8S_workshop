@@ -1,0 +1,20 @@
+## current cluster we are working on
+kubectl config current-context
+
+## creating imageg in hub
+docker tag my-web-service saritnovikg/my-web-service
+docker push saritnovikg/my-web-service
+## docker pull saritnovikg/my-web-service ## for anyone who want to see if they can pull the image
+
+
+kubectl get pods -o wide
+
+kubectl create -f pod.yaml
+
+kubectl logs [pod name] --all-containers
+
+
+--- services
+kubectl apply -f service.yaml
+kubectl get services
+kubectl describe svc

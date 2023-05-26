@@ -1,0 +1,7 @@
+apiVersion: v2
+name: mywebapp
+version: 1.0.0
+description: A Helm chart for deploying MyWebApp
+maintainers:
+  - name: Your Name
+    email: your@email.com
