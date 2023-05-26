@@ -1,0 +1,7 @@
+replicaCount: 3
+image:
+  repository: mywebapp
+  tag: 1.0.0
+  pullPolicy: IfNotPresent
+service:
+  port: 80
