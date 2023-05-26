@@ -1,20 +1,51 @@
 ## current cluster we are working on
 kubectl config current-context
 
-## creating imageg in hub
-docker tag my-web-service saritnovikg/my-web-service
-docker push saritnovikg/my-web-service
-## docker pull saritnovikg/my-web-service ## for anyone who want to see if they can pull the image
 
+## create a pod - explain all the details in the yaml
+kubectl create -f pod.yaml
 
+## look on the pod
 kubectl get pods -o wide
 
-kubectl create -f pod.yaml
+## try to connect to the pod - we cant because we dont have a service
 
 kubectl logs [pod name] --all-containers
 
 
 --- services
+### start with a service without a label - 
 kubectl apply -f service.yaml
 kubectl get services
+
+## show in the dashboard that the service is not connected to a pod
+
+## show IP and everything
 kubectl describe svc
+
+## add the correct label to the service
+## recreate the service
+## show that the service now has a pod
+## run the service
+
+
+## create deployment - using my second app
+## talk about load balancer
+## create service for the deployment
+## see that we can connect now to the app
+## show replicas
+## delete pod - see that it recovers
+
+## go to second deployment show everything that is going on there
+kubectl apply -f deployment_second.yaml
+
+## show the rollout status:
+kubectl rollout status deploy sarit-deployment
+## show get pods
+kubectl get pods
+## show the dashboard and see that the apps are being replaced
+
+
+minikube srevice sarit-serice --url
+
+## add ingress

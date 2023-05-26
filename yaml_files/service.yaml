@@ -7,7 +7,7 @@ spec:
     app: web-sarit
   ports:
     - protocol: TCP
-      port: 80
+      port: 8080
       targetPort: 5000
       nodePort: 30010
   type: NodePort

@@ -4,7 +4,7 @@ metadata:
   name: sarit-ingress
 spec:
   rules:
-    - host: example.com
+    - host: sarit-example.com
       http:
         paths:
           - path: /
@@ -13,4 +13,4 @@ spec:
               service:
                 name: sarit-service
                 port:
-                  number: 80
+                  number: 30010

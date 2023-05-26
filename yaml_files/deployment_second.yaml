@@ -4,6 +4,18 @@ metadata:
   name: sarit-deployment
 spec:
   replicas: 6
+  minReadySeconds: 5
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 0
+      maxSurge: 1
+  template:
+    metadata:
+      labels:
+        app: web
+    spec: 
+      terminationGracePeriodSeconds: 10s
   selector:
     matchLabels:
       app: web-sarit-second
@@ -14,6 +26,6 @@ spec:
     spec:
       containers:
       - name: sarit-second-container
-        image: saritnovikg/my-second-app
+        image: saritnovikg/my-second-app:2.0
         ports:
         - containerPort: 5000

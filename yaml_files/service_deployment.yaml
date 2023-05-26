@@ -1,0 +1,29 @@
+# 3. Create a service for the deployment.
+# Path: yaml_files\service.yaml
+# Compare this snippet from yaml_files\service.yaml:
+# apiVersion: v1
+# kind: Service
+# metadata:
+#   name: sarit-service
+# spec:
+#   selector:
+#     app: web-sarit
+#   ports:
+#     - protocol: TCP
+#       port: 80
+#       targetPort: 5000
+#       nodePort: 30010
+#   type: NodePort
+apiVersion: v1
+kind: Service
+metadata:
+  name: sarit-service-second
+spec:
+  selector:
+    app: web-sarit-second
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 5000
+      nodePort: 30020
+  type: NodePort

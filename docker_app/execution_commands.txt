@@ -11,3 +11,11 @@ docker  exec -it 2c237dda1eb6 /bin/bash
 
 ## see if I can add somehow log messages and see them
 
+## creating image in hub and pulling it if we need to.
+docker tag my-web-service saritnovikg/my-web-service
+docker push saritnovikg/my-web-service
+## docker pull saritnovikg/my-web-service ## for anyone who want to see if they can pull the image
+
+docker tag my-second-app saritnovikg/my-second-app
+docker push saritnovikg/my-second-app
+
