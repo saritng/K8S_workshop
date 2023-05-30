@@ -1,3 +1,4 @@
+## example with resources - limits and requests for cpu and memory
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -16,15 +17,14 @@ spec:
       labels:
         app: web
     spec:
-      volumes:
-       —name: my-pv-storage
-          persistentVolumeClaim:
-            claimName: my-pv-claim
       containers:
        —name: nginx
           image: nginx
+          resources:
+            limits:
+              memory: 200Mi
+            requests:
+              cpu: 100m
+              memory: 200Mi
           ports:
            —containerPort: 80
-          volumeMounts:
-           —mountPath: "/usr/share/nginx/html"
-              name: my-pv-storage

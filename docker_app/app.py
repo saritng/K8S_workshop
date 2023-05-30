@@ -5,6 +5,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def hello():
+    crash_variable = undefined_variable
     logging.info("before I say hello I say goodbye")
     return 'Hello, World!'
     logging.info("after I say hello I say goodbye")

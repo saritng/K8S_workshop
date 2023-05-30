@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: sarit-service
+spec:
+  ports:
+    - protocol: TCP
+      port: 8080
+      targetPort: 5000
+      nodePort: 30010
+  type: NodePort
