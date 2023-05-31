@@ -7,6 +7,6 @@ metadata:
 spec:
   containers:
   - name: my-web-service
-    image: saritnovikg/my-web-service
+    image: saritnovikg/my-web-service:2.0 ## this should be removed later
     ports:
     - containerPort: 5000

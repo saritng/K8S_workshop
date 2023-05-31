@@ -3,8 +3,6 @@ kind: Service
 metadata:
   name: sarit-service
 spec:
-  selector:
-    app: web-sarit
   ports:
     - protocol: TCP
       port: 8080

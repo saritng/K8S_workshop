@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sarit-deployment
+spec:
+  replicas: 6
+  minReadySeconds: 5 ## wait time before pod is considered ready, to make sure app is up
+  strategy:
+    type: RollingUpdate ## type of update, rolling means update one pod at a time
+    rollingUpdate:
+      maxUnavailable: 0 ## max number of pods that can be unavailable during update
+      maxSurge: 1 ## max number of pods that can be created above the desired number of pods - 
+      ##to make sure we have enough pods to serve traffic
+  template: 
+    metadata:
+      labels:
+        app: web
+    spec: 
+      terminationGracePeriodSeconds: 10s ## wait time before pod is terminated
+  selector:
+    matchLabels:
+      app: web-sarit-second
+  template:
+    metadata:
+      labels:
+        app: web-sarit-second
+    spec:
+      containers:
+      - name: sarit-second-container
+        image: saritnovikg/my-second-app:2.0
+        ports:
+        - containerPort: 5000

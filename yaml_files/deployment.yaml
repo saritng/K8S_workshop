@@ -1,19 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: my-deployment
+  name: sarit-deployment
+##Defines the desired state of the Deployment, including the number of replicas, selector, and template for creating Pods.
 spec:
-  replicas: 3
-  selector:
+  replicas: 6
+  selector: ##pod selector (notice the lavel in line 10 matches line 14)
     matchLabels:
-      app: my-app
-  template:
+      app: web-sarit-second 
+  template: ##Pod template
     metadata:
       labels:
-        app: my-app
-    spec:
+        app: web-sarit-second
+    spec: ##Pod specification
       containers:
-      - name: my-container
-        image: nginx:latest
+      - name: sarit-second-container
+        image: saritnovikg/my-second-app
         ports:
-        - containerPort: 80
+        - containerPort: 5000
