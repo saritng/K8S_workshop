@@ -15,6 +15,6 @@ spec:
     spec: ##Pod specification
       containers:
       - name: sarit-second-container
-        image: saritnovikg/my-second-app
+        image: saritnovikg/my-second-app:1.0
         ports:
         - containerPort: 5000

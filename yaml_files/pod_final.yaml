@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: sarit-pod
+  labels:
+    app: web-sarit
+spec:
+  containers:
+  - name: my-web-service
+    image: saritnovikg/my-web-service:1.0 
+    ports:
+    - containerPort: 5000

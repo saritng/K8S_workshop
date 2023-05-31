@@ -35,17 +35,17 @@ kubectl describe service sarit-service
 ##usually we will be able to access the service by looking on one of the node's IP 
 ##and the port. but as minikube runs on docker we need to use tunnel
 ## (transferring the port to the local machine)
-minkube serice sarit-service --url
+minikube service sarit-service --url
 
 
 ## deployment exercise
 ###############################################
 ##show docker for second app - and create two image versions
-kubectl apply -f deployment_second.yaml
+kubectl apply -f deployment.yaml
 ## show pods - with replicas.
 ## kill pod and see what happens
 kubectl get pods
-kubectl kill pod [pod name]
+kubectl delete pod [pod name]
 kubectl get pods ## the number of pods should return to the original number 
 ##and a new pod was created
 ################################################# go back to deck
@@ -53,7 +53,7 @@ kubectl get pods ## the number of pods should return to the original number
 ## look on dashboard - there is no service, lets create it
 kubectl apply -f service_deployment.yaml
 ##using tunnel we can now connect our service/app
-minikube service sarit-second-service --url
+minikube service sarit-service-second --url
 ## go to second deployment show everything that is going on there
 kubectl apply -f deployment_second.yaml
 
@@ -77,7 +77,7 @@ kubectl describe rs [rs name]
 
 ##Rollback
 kubectl rollout history deploy sarit-deployment
-kubectl rollout undo deploy sarit-deployment --to-revision=2
+kubectl rollout undo deploy sarit-deployment --to-revision=1
 
 minikube service sarit-serice --url
 ## show that we are back to the first version
