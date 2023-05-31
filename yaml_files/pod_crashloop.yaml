@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: faulty-pod
+spec:
+  containers:
+  - name: faulty-container
+    image: busybox
+    command: ["sh", "-c", "exit 1"]
