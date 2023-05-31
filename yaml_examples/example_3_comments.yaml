@@ -27,5 +27,5 @@ spec:
             httpGet:
               path: /
               port: 80
-            initialDelaySeconds: 5 ##initialDelaySeconds - how long to wait before checking
+            initialDelaySeconds: 5 ## initialDelaySeconds - how long to wait before checking
             periodSeconds: 5 ##periodSeconds - how often to checks
