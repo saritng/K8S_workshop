@@ -9,4 +9,4 @@ spec:
   - name: my-web-service
     image: saritnovikg/my-web-service:3.0 
     ports:
-    - containerPort: 5000
+    - containerPort: 5004

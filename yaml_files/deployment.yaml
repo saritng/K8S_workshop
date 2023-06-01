@@ -14,7 +14,7 @@ spec:
         app: web-sarit-second
     spec: ##Pod specification
       containers:
-      - name: sarit-second-container
-        image: saritnovikg/my-second-app:1.0
+      - name: sarit-app-second
+        image: saritnovikg/sarit-app-second:1.0
         ports:
-        - containerPort: 5000
+        - containerPort: 5006

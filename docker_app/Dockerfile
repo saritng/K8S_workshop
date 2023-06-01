@@ -14,7 +14,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY . .
 
 # Set the command to run the application
-CMD [ "python", "appCrash.py" ]
+CMD [ "python", "app_5004.py" ]
 
 # Expose the port the application runs on
-EXPOSE 5000
+EXPOSE 5004
